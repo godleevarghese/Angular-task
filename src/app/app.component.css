@@ -1,0 +1,13 @@
+.title {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(247, 113, 131);
+}
+
+.main {
+  background-color: rgb(247, 252, 255);
+  padding-bottom: 80px;
+}

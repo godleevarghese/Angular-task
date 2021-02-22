@@ -1,0 +1,84 @@
+<div class="example-container">
+  <div class="form-container">
+    <form [formGroup]="profileForm" class="form">
+      <h3 class="profile">User Form</h3>
+
+      <div>
+        <mat-form-field class="form-field inp" appearance="outline">
+          <mat-label> User name </mat-label>
+          <input matInput formControlName="userName" required />
+          <mat-error>
+            <span
+              style="color: red"
+              *ngIf="profileForm.controls.userName.errors?.pattern"
+              >Username must contain 8 characters or numbers</span
+            >
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="form-field inp" appearance="outline">
+          <mat-label class="label"> First name </mat-label>
+
+          <input matInput formControlName="firstName" required />
+          <mat-error
+            style="color: red"
+            *ngIf="profileForm.controls.firstName.errors"
+          >
+            First name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="form-field inp" appearance="outline">
+          <mat-label class="label"> Last name </mat-label>
+
+          <input matInput formControlName="lastName" required />
+          <mat-error
+            style="color: red"
+            *ngIf="profileForm.controls.lastName.errors"
+          >
+            Last name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="form-field" appearance="outline" class="inp">
+          <mat-label class="label"> E-mail </mat-label>
+          <input matInput formControlName="email" required />
+
+          <mat-error>
+            <span *ngIf="profileForm.controls.email.errors?.pattern"
+              >Enter valid e-mail address</span
+            >
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="form-field inp" appearance="outline">
+          <mat-label> Mobile </mat-label>
+          <input matInput formControlName="mobile" type="text" required />
+          <mat-error>
+            <span *ngIf="profileForm.controls.mobile.errors?.pattern"
+              >Mobile number should have 10 numbers</span
+            >
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          style="color: #fff; background-color: rgb(247, 68, 68)"
+          mat-raised-button type="button"
+          (click)="submit()"
+          [disabled]="profileForm.invalid"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
